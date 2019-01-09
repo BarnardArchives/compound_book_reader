@@ -1,3 +1,4 @@
 name = Barnard Compound BookReader
 description = "An Internet Archive BookReader extension for Islandora Compound Objects."
 core = 7.x
+stylesheets[all][] = css/barnard_compound_bookreader.css
