@@ -7,20 +7,17 @@
  * Purpose: redefines the BookReader proto to be aware
  * of Islandora Compound Objects.
  */
-Drupal.settings.islandoraInternetArchiveBookReader_jQuery = jQuery.noConflict(true);
 
-(function ($) {
+(function ( $ ) {
   Drupal.behaviors.islandoraInternetArchiveBookReader = {
     attach: function (context, settings) {
       $('.islandora-internet-archive-bookreader', context).once('islandora-bookreader', function () {
         // Initialize and Render the BookReader.
         var bookReader = null;
         if (settings.islandoraInternetArchiveBookReader.pageSource === 'djatoka') {
-          console.log('hi', this);
           bookReader = new IslandoraDjatokaBookReader(settings.islandoraInternetArchiveBookReader);
         }
         else if (settings.islandoraInternetArchiveBookReader.pageSource === 'iiif') {
-          console.log('hi', this);
           bookReader = new IslandoraIiifBookReader(settings.islandoraInternetArchiveBookReader);
         }
 
@@ -49,4 +46,4 @@ Drupal.settings.islandoraInternetArchiveBookReader_jQuery = jQuery.noConflict(tr
       });
     }
   };
-})(jQuery);
+})( jQuery );

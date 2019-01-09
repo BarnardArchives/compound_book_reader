@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,yBAA0B;EACxB,SAAS,EAAE,eAAe;;AAG5B,0BAA2B;EACzB,SAAS,EAAE,cAAc;;AAG3B,2BAA4B;EAC1B,aAAa,EAAE,eAAe;EAE9B,MAAM,EAAE,KAAK;EACb,SAAS,EAAE,cAAc;;AAE3B,0BAA2B;EACzB,UAAU,EAAE,eAAe;;AAG7B,yBAA0B;EACxB,aAAa,EAAE,GAAG;EAClB,cAAc,EAAE,YAAY;;AAG9B,qDAAsD;EACpD,SAAS,EAAE,cAAc",
+"sources": ["../sass/barnard_compound_bookreader.scss"],
+"names": [],
+"file": "barnard_compound_bookreader.css"
+}

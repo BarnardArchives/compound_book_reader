@@ -20,12 +20,13 @@
  *
  * @todo
  */
-(function ($) {
+(function ( $ ) {
   // SMH.
   BookReader.prototype._init = BookReader.prototype.init;
   BookReader.prototype.init = function () {
     // This is first so we can set the initial display mode for compound
     // objects. Otherwise you can skip it.
+
     this.getCompoundInformation();
 
     this.bookReaderInitialMode = this.settings.bookReaderInitialMode || 0;
@@ -256,4 +257,4 @@
       }
     }
   };
-})(jQuery);
+})( jQuery );

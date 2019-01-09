@@ -11,11 +11,14 @@
  * Implements hook_preprocess_HOOK().
  */
 function barnard_compound_bookreader_preprocess_islandora_internet_archive_bookreader(array &$variables) {
-  dpm('code hit.');
   $object = $variables['object'];
   $pid = $object->id;
   $ns = islandora_get_namespace($pid);
 
+  // Barnard has settings in its module for which items should 
+  // be 1up (most IAB items) or thumbs (currently none).
+  //
+  // @TODO: Bring these settings over to this module.
   $thumbs = explode(', ', variable_get('bc_islandora_bookreader_initial_thumbs'));
   $one_ups = explode(', ', variable_get('bc_islandora_bookreader_initial_1up'));
 
@@ -32,10 +35,10 @@ function barnard_compound_bookreader_preprocess_islandora_internet_archive_bookr
     ], 'setting');
   }
 
-  $barnard_islandora_path = drupal_get_path('module', 'bc_islandora');
-
+  $barnard_compound_bookreader = drupal_get_path('module', 'barnard_compound_bookreader');
+  
   // This is the extended BookReader that is to be called BEFORE IIAB.
-  drupal_add_js("$barnard_islandora_path/js/compound_book_reader.js",
+  drupal_add_js("$barnard_compound_bookreader/js/compound_book_reader.js",
     [
       'group' => JS_LIBRARY,
       'weight' => -5,
@@ -44,7 +47,7 @@ function barnard_compound_bookreader_preprocess_islandora_internet_archive_bookr
   
   // This just replaces the default with ours: it hides additional items, and
   // is not required for functionality.
-  drupal_add_js("$barnard_islandora_path/js/barnard_islandora_internet_archive_bookreader.js",
+  drupal_add_js("$barnard_compound_bookreader/js/barnard_islandora_internet_archive_bookreader.js",
     [
       'group' => JS_LIBRARY,
       'weight' => -5,
