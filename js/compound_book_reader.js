@@ -122,9 +122,7 @@
       // This is a context used in the updateCompoundBlockContent.
       this.compoundActiveInclusion = $(".inclusion-page-" + this.compoundInclusionPageNum);
 
-      // Why am I relying on the breadcrumbs?  Because we can?  Sanity check,
-      // please.
-      var parentAlumBreadcrumb = $("div.breadcrumb a:last");
+      var parentAlumBreadcrumb = $(".islandora-compound-thumbs > .parent > a");
       this.compoundReturnUrl = parentAlumBreadcrumb.attr('href') + '#page/' + this.compoundInclusionPageNum;
       parentAlumBreadcrumb.attr('href', this.compoundReturnUrl);
       this.compoundInclusionObjects.find("a.active").attr('href', this.compoundReturnUrl);
